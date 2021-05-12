@@ -28,7 +28,7 @@ protected:
 
 	UPROPERTY( EditAnywhere, BlueprintReadWrite, Category = "Hyper Tube" )
 	float mOpeningOffset = 350.0f;
-private:
+public:
 	float mTimer = 0;
 	
 
@@ -36,7 +36,7 @@ private:
 
 	/**Set value to above 1 to give the player a small boost when entering pipes in slow speed. 
 	   Could be exploited if made too big, but it felt better and clearer feedback about slowdowns if it was a little above the usual min speed when doing initial tests.*/
-	UPROPERTY( EditDefaultsOnly )
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly )
 	float mInitialMinSpeedFactor = 1.4f;
 };
 
