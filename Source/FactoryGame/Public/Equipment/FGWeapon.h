@@ -148,7 +148,7 @@ protected:
 	UFUNCTION( BlueprintPure, Category = "Hud" )
 	FORCEINLINE AFGHUD* GetAssosiatedHud() const { return mAssosiatedHud; }
 
-protected:
+public:
 	UPROPERTY()
 	AFGHUD* mAssosiatedHud = nullptr; //[DavalliusA:Wed/20-03-2019] the base hud object will never get invalid during use, so we can use anormal pointer here to access it.
 

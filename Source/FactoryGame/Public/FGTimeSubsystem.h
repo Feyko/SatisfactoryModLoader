@@ -151,7 +151,7 @@ protected:
 
 	/** Convert a "real" dt to a "game" dt */
 	float GetGameDeltaTime( float dt ) const;
-protected:
+public:
 	/** How often (in seconds) we should synchronize the time of day with the server */
 	UPROPERTY( EditDefaultsOnly, Category="Time Replication")
 	float mSyncronizeTimeOfDayInterval;
@@ -160,33 +160,33 @@ protected:
 	* In minutes, how long is the day part of a day? (normally 06-18).
 	* that is, how many minutes should it take to for the time 06 -> 18 to pass?
 	*/
-	UPROPERTY( EditDefaultsOnly, Replicated, Category="Time")
+	UPROPERTY( BlueprintReadWrite, EditDefaultsOnly, Replicated, Category="Time")
 	float mDayLengthMinutes;
 
 	/** 
 	 * In minutes, how long is the night part of a day? (normally 18-06).
 	 * that is, how many minutes should it take to for the time 18 -> 06 to pass? 
 	 */
-	UPROPERTY( EditDefaultsOnly, Replicated, Category = "Time" )
+	UPROPERTY( BlueprintReadWrite,EditDefaultsOnly, Replicated, Category = "Time" )
 	float mNightLengthMinutes;
 
 	/** In hours, when does the day start (if you want 06.45, enter 06.75) */
-	UPROPERTY( EditDefaultsOnly, Replicated, Category="Time" )
+	UPROPERTY( BlueprintReadWrite,EditDefaultsOnly, Replicated, Category="Time" )
 	float mDayStartTime;
 
 	/** In hours, when does the night start (if you want 19.10, enter 19.1666667) */
-	UPROPERTY( EditDefaultsOnly, Replicated, Category = "Time" )
+	UPROPERTY( BlueprintReadWrite,EditDefaultsOnly, Replicated, Category = "Time" )
 	float mNightStartTime;
 
 	/** Multiplier for speeding up the day/night cycle */
-	UPROPERTY( EditDefaultsOnly, Replicated, Category = "Time" )
+	UPROPERTY( BlueprintReadWrite,EditDefaultsOnly, Replicated, Category = "Time" )
 	float mSpeedMultiplier;
 
 	/** Difference in our time compared to the server */
 	float mServerDaySecondsDelta;
 
 	/**  How many seconds that has passed into our current day */
-	UPROPERTY( SaveGame )
+	UPROPERTY( BlueprintReadWrite,SaveGame )
 	float mDaySeconds;
 
 	/** Written to by server, sends over the time that the server currently have */
@@ -194,7 +194,7 @@ protected:
 	float mReplicatedDaySeconds;
 
 	/** The current day that has passed */
-	UPROPERTY( SaveGame, Replicated )
+	UPROPERTY( BlueprintReadWrite,SaveGame, Replicated )
 	int32 mNumberOfPassedDays;
 
 	/** Used for regularly update the server time */

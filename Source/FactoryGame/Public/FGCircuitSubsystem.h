@@ -182,9 +182,9 @@ public:
 	UPROPERTY( EditDefaultsOnly, Category = "Power Circuit")
 	float mMinimumBatteryWarningInterval = 10.0f;
 
-private:
+public:
 	/** Map with all circuits and the circuit ID as the key. */
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite)
 	TMap< int32, class UFGCircuit* > mCircuits;
 
 	/** @todo There is no support for TMap replication, fix something better than this. */
